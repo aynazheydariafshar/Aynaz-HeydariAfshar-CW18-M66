@@ -10,11 +10,11 @@ constructor(props) {
     };
 }
 
-settime(){
-    this.setState({
-        time : new Date()
-    })
-}
+    settime(){
+        this.setState({
+            time : new Date()
+        })
+    }
 
     componentDidMount(){
         this.interval = setInterval(()=>
