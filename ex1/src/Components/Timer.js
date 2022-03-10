@@ -1,45 +1,31 @@
-import React from 'react';
+import React , {useState , useEffect} from 'react'
 
-class Timer extends React.Component {
-constructor(props) {
-    super(props);
+function Timer() {
+    let [time , settime] = useState(new Date())
+    let [colors , setcolors] = useState('')
 
-    this.state = {
-        time : new Date(),
-        colors : ''
-    };
-}
 
-    settime(){
-        this.setState({
-            time : new Date()
-        })
+    const setTimeHandle = () => {
+        settime(new Date())
     }
 
-    componentDidMount(){
-        this.interval = setInterval(()=>
+    useEffect(() => {
+        let interval = setInterval(()=>
         {
-            this.settime();
+            setTimeHandle()
             let randomColor = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6);
-            this.setState({
-                colors : randomColor
-            })
+            setcolors(randomColor)
         }
         ,1000)
-    }
-
-    componentWillUnmount(){
-        clearInterval(this.interval)
-    }
+        return() => clearInterval(interval)
+    }, [])
 
 
-    render() {
-        return (
-            <div>
-                <h1 style={{color : `${this.state.colors}`}}>{this.state.time.toLocaleTimeString()}</h1>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h1 style={{color : colors}}>{time.toLocaleTimeString()}</h1>
+        </div>
+    )
 }
 
 
