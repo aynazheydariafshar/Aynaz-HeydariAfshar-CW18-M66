@@ -1,4 +1,5 @@
 import './Assests/Styles/App.css';
+import Parageraph from './Components/Parageraph';
 import Table from './Components/Table';
 import Timer from './Components/Timer';
 
@@ -15,6 +16,7 @@ function App() {
       <table>
         <Table matrix={table}/>
       </table>
+      <Parageraph />
     </div>
   );
 }
