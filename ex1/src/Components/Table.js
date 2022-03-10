@@ -3,8 +3,8 @@ function Table (props){
         <thead>
             <tr>
                 {props.matrix[0].map(item=>{
-                    return <th>{'col' +item}</th>
-                })};
+                    return <th>{'col' + item}</th>
+                })}
             </tr>
         </thead>
         <tbody>
