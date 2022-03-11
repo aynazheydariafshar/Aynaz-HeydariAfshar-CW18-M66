@@ -4,6 +4,7 @@ import TodoList from "./components/TodoList";
 import Timer from "./components/Timer";
 import {Form} from "react-bootstrap";
 import React from "react";
+import ClickCheck from './components/ClickCheck';
 
 export const name = 'abaszade';
 export const family = 'javaheri';
@@ -58,6 +59,7 @@ class App extends React.Component {
 
                 </div>
                 <TodoList user={this.state.currentUser}/>
+                <ClickCheck />
             </header>
         </div>)
     }
