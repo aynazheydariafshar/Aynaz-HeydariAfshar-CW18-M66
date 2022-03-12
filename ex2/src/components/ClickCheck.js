@@ -8,6 +8,7 @@ function ClickCheck() {
         console.log('inside')
         return count
     } , [count]);
+
     const handleClick = () => {
         setCount(count + 1)
     }
@@ -16,7 +17,7 @@ function ClickCheck() {
         <input type='text' onChange={(e)=>setvalue(e.target.value)}/>
         <button onClick={handleClick}>click here</button>
         <p><span>{count}</span> clicked</p>
-        <p><span> {value} </span> is your value </p>
+        <p><span> {handleClickmemo} </span> is your value </p>
     </div>;
 }
 
